@@ -98,7 +98,7 @@ $\LARGE r_{um} = \mu_m + b_u$
 
 Based on the above model, the ratings are predicted and the RMSE is calculated to understand how well this model performs.
 
-The RMSE of the previous model is 0.8646843. There could be other considerations included in deciding the model. Did the average user rating for movies change over the years? Is there a general trend of rating the movies over the years irrespective of the director or the protagonist? These could be considered for fitting the model to impove accuracy. But it could also result in over-fitting. However, the above model can be regularized to penalize large values. Using L2 regularization on the user bias, the optimal value for lambda is found that minimizes the RMSE is found. A lambda value of 5 minimized the RMSE to 0.864253. The average user bias for an user with the lambda value is calculated using the below formula.
+The RMSE of the previous model is 0.8659736. There could be other considerations included in deciding the model. Did the average user rating for movies change over the years? Is there a general trend of rating the movies over the years irrespective of the director or the protagonist? These could be considered for fitting the model to impove accuracy. But it could also result in over-fitting. However, the above model can be regularized to penalize large values. Using L2 regularization on the user bias, the optimal value for lambda is found that minimizes the RMSE is found. A lambda value of 5 minimized the RMSE to 0.8655944. The average user bias for an user with the lambda value is calculated using the below formula.
 
 $\LARGE b_u = \sum_{m=1}^{n}\frac{r_{mu} - \mu_m}{n + \lambda}$ 
 

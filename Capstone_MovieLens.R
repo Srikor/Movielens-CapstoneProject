@@ -39,7 +39,7 @@ movielens <- left_join(ratings, movies, by = "movieId")
 
 # Set seed to ensure the code outputs same results regardless of the machine it is being executed.
 # if using R 3.5 or earlier, use `set.seed(1)` instead
-set.seed(1, sample.kind="Rounding")
+set.seed(1, sample.kind = "Rounding")
 
 # Create the training and testing sets. The training set (edx) will contain 90% of the records in the 
 # movielens data frame. The test set (validation) will contain the balance 10% of records.
@@ -107,7 +107,7 @@ prediction_test <- test %>%
 # Calculate the RMSE for the above prediction.
 RMSE(prediction_test$predicted_rating, test$rating) 
 
-# The RMSE based on the above model is 0.8646843. The above model did not include any L2 regularization 
+# The RMSE based on the above model is 0.8659736. The above model did not include any L2 regularization 
 # parameter lambda. Identify the optimal lambda that minimizes the RMSE. Lambda values from 1 to 10
 # with increments of 1 can be tried on the user bias to identify the optimal lambda value.
 lambda_seq <- seq(1,10,1)
@@ -130,7 +130,7 @@ rmse_val <- sapply(lambda_seq, function(x){
 lambda_optimal <- data.frame(lambda = lambda_seq, rmse= rmse_val) %>% 
   filter(rmse == min(rmse))
 
-# The above code resulted in optimal lambda value of 5 with a RMSE of 0.864253. This lambda will
+# The above code resulted in optimal lambda value of 5 with a RMSE of 0.8655944. This lambda will
 # be used in the prediction of ratings in the validation set.
 lambda <- lambda_optimal$lambda
 
